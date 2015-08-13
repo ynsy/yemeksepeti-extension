@@ -91,10 +91,15 @@ var jokerNotifier = {
       resultArea.append(table);
 
       chrome.browserAction.setBadgeText ( { text: data.OfferItems.length.toString() } );
+	  
+	  var myAudio = new Audio();        
+	  myAudio.src = "/Tuğba Yurt  - Oh Oh.mp3"; 
+	  myAudio.play();                   
     }
     else {
       resultArea.html(data.IsValid ? 'Joker yok :(' : data.Message);
       chrome.browserAction.setBadgeText ( { text: '' } );
+	  myAudio.pause();
     }
   }
 };
